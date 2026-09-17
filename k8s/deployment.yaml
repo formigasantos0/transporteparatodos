@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transporteparatodos
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: transporteparatodos
+
+  template:
+    metadata:
+      labels:
+        app: transporteparatodos
+
+    spec:
+      containers:
+        - name: transporteparatodos
+          image: cloudlabhost/transporteparatodos:v1
+
+          ports:
+            - containerPort: 80
