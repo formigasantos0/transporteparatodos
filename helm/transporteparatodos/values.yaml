@@ -1,0 +1,12 @@
+replicaCount: 2
+
+image:
+  repository: cloudlabhost/transporteparatodos
+  tag: f82beecadbf4746acd61f4acef7c28b16609d76e
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 32329
