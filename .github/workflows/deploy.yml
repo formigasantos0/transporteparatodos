@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'helm/**'
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
 
@@ -28,13 +29,3 @@ jobs:
           tags: |
             cloudlabhost/transporteparatodos:latest
             cloudlabhost/transporteparatodos:${{ github.sha }}
-
-  deploy:
-    needs: build
-    runs-on: [self-hosted, Linux, X64, transporte]
-
-    steps:
-      - name: Atualizar Kubernetes
-        run: |
-          kubectl set image deployment/transporteparatodos transporteparatodos=cloudlabhost/transporteparatodos:${{ github.sha }}
-          kubectl rollout status deployment/transporteparatodos --timeout=120s

@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: cloudlabhost/transporteparatodos
-  tag: f82beecadbf4746acd61f4acef7c28b16609d76e
+  tag: b318a5924f28483dc2b4190aaafcde1953e4875c
   pullPolicy: IfNotPresent
 
 service:
