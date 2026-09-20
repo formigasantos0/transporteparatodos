@@ -2,12 +2,21 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: transporteparatodos
-
 spec:
   ingressClassName: nginx
-
   rules:
     - host: transporteparatodos.org.br
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: transporteparatodos
+                port:
+                  number: 80
+
+    - host: lab.transporteparatodos.org.br
       http:
         paths:
           - path: /
