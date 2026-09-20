@@ -1,0 +1,27 @@
+# Variáveis de ambiente / credenciais
+.env
+.env.*
+!.env.example
+
+# Chaves e certificados privados
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Kubernetes - credenciais locais
+kubeconfig
+*kubeconfig*
+admin.conf
+
+# Secrets locais
+secrets.yaml
+secrets.yml
+*-secret.yaml
+*-secret.yml
+
+# Arquivos locais de editor/SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
