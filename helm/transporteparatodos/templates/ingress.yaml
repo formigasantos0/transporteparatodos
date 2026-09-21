@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   name: transporteparatodos
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
   ingressClassName: nginx
 
   tls:
     - hosts:
         - lab.transporteparatodos.org.br
-      secretName: lab-transporteparatodos-tls
+      secretName: lab-transporteparatodos-tls-production
 
   rules:
     - host: transporteparatodos.org.br
